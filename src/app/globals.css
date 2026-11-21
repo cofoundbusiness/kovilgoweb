@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* KovilGo Official Color Palette */
+    /* Primary Yellow #FDB913: 42 98% 53% */
+    /* Primary Black #080808: 0 0% 3% */
+    /* Pure White #FFFFFF: 0 0% 100% */
+    /* Warm Ivory #FFF9F0: 36 100% 97% */
+    /* Soft Grey #E7E7E7: 0 0% 91% */
+    /* Cloud Grey #F4F4F4: 0 0% 96% */
+
+    --background: 36 100% 97%; /* #FFF9F0 */
+    --foreground: 0 0% 3%;    /* #080808 */
+
+    --card: 0 0% 100%;        /* #FFFFFF */
+    --card-foreground: 0 0% 3%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3%;
+
+    --primary: 42 98% 53%;     /* #FDB913 */
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 0 0% 91%;     /* #E7E7E7 */
+    --secondary-foreground: 0 0% 3%;
+
+    --muted: 0 0% 96%;         /* #F4F4F4 */
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 42 98% 53%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 91%;        /* #E7E7E7 */
+    --input: 0 0% 91%;
+    --ring: 42 98% 53%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 3%;     /* #080808 */
+    --foreground: 36 100% 97%; /* #FFF9F0 */
+
+    --card: 0 0% 7%;
+    --card-foreground: 36 100% 97%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 36 100% 97%;
+
+    --primary: 42 98% 53%;
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 36 100% 97%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 42 98% 53%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 42 98% 53%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-baloo), sans-serif;
+  }
+
+  ::selection {
+    background-color: #FDB913;
+    color: #080808;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glassmorphism {
+    background: rgba(255, 249, 240, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .glassmorphism-dark {
+    background: rgba(8, 8, 8, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Accessibility: Respect user reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
