@@ -4,6 +4,10 @@
 
 @layer base {
   :root {
+    /* Google Fonts CSS variables */
+    --font-baloo: 'Baloo 2', sans-serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
+
     /* KovilGo Official Color Palette */
     /* Primary Yellow #FDB913: 42 98% 53% */
     /* Primary Black #080808: 0 0% 3% */
